@@ -1,5 +1,10 @@
 import type { Metadata, Viewport } from "next";
-import { Bricolage_Grotesque, Inter, Instrument_Serif } from "next/font/google";
+import {
+  Bricolage_Grotesque,
+  Geist,
+  Inter,
+  Instrument_Serif,
+} from "next/font/google";
 import "./globals.css";
 
 const bricolage = Bricolage_Grotesque({
@@ -10,6 +15,12 @@ const bricolage = Bricolage_Grotesque({
 
 const inter = Inter({
   variable: "--font-inter",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const geist = Geist({
+  variable: "--font-geist-sans",
   subsets: ["latin"],
   display: "swap",
 });
@@ -56,7 +67,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="fr"
-      className={`${bricolage.variable} ${inter.variable} ${instrument.variable} h-full antialiased`}
+      className={`${bricolage.variable} ${inter.variable} ${instrument.variable} ${geist.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-cream text-ink">{children}</body>
     </html>

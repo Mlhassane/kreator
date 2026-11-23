@@ -20,6 +20,22 @@
   --font-display: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-instrument), Georgia, serif;
+  --font-geist: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+
+  /* Kreator Studio — identité produit (SaaS) */
+  --color-studio-bg: #fafaf8;
+  --color-studio-surface: #ffffff;
+  --color-studio-soft: #f4f4f1;
+  --color-studio-violet: #7357ff;
+  --color-studio-violet-dark: #5a3ff0;
+  --color-studio-violet-soft: #eeebff;
+  --color-studio-lime: #c5f36b;
+  --color-studio-ink: #151515;
+  --color-studio-muted: #777777;
+  --color-studio-border: #eeeeee;
+
+  --shadow-studio: 0 1px 2px rgba(21, 21, 21, 0.04), 0 10px 30px -18px rgba(21, 21, 21, 0.16);
+  --shadow-studio-pop: 0 2px 4px rgba(21, 21, 21, 0.05), 0 28px 60px -28px rgba(21, 21, 21, 0.28);
 
   --radius-4xl: 2rem;
   --radius-5xl: 2.75rem;
@@ -107,6 +123,49 @@
     opacity: 0.35;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.22'/%3E%3C/svg%3E");
     mix-blend-mode: multiply;
+  }
+
+  /* ── Kreator Studio ───────────────────────────────────── */
+  .studio {
+    background: var(--color-studio-bg);
+    color: var(--color-studio-ink);
+    font-family: var(--font-geist);
+  }
+
+  .studio h1,
+  .studio h2,
+  .studio h3,
+  .studio h4 {
+    font-family: var(--font-geist);
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+  }
+
+  .studio ::selection {
+    background: var(--color-studio-violet);
+    color: #fff;
+  }
+
+  .studio :focus-visible {
+    outline: 2px solid var(--color-studio-violet);
+    outline-offset: 2px;
+  }
+
+  .studio-card {
+    background: var(--color-studio-surface);
+    border: 1px solid var(--color-studio-border);
+    border-radius: 16px;
+    box-shadow: var(--shadow-studio);
+  }
+
+  .studio-dotted {
+    background-image: radial-gradient(
+      circle at 1px 1px,
+      rgba(21, 21, 21, 0.06) 1px,
+      transparent 0
+    );
+    background-size: 22px 22px;
   }
 }
 

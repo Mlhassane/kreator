@@ -354,5 +354,6 @@ export const navLinks = [
   { label: "Comment ça marche", href: "/#comment-ca-marche" },
   { label: "Marques", href: "/marques" },
   { label: "Créateurs", href: "/createurs" },
+  { label: "Studio créateur", href: "/studio" },
   { label: "Tarifs", href: "/tarifs" },
 ];
