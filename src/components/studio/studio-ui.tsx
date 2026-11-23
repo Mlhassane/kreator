@@ -5,10 +5,10 @@ import { statusMeta, type CampaignStatus, type CampaignType } from "@/lib/studio
 
 const toneClasses: Record<string, string> = {
   neutral: "bg-studio-soft text-studio-muted",
-  violet: "bg-studio-violet-soft text-studio-violet",
-  amber: "bg-[#fff4d6] text-[#8a5a00]",
-  green: "bg-[#e9f8e1] text-[#2f6b1f]",
-  blue: "bg-[#e7f0ff] text-[#1f4fa8]",
+  accent: "bg-studio-accent-soft text-studio-accent",
+  warning: "bg-studio-warning-soft text-studio-warning",
+  success: "bg-studio-success-soft text-studio-success",
+  info: "bg-studio-soft text-studio-ink",
 };
 
 export function StatusBadge({ status }: { status: CampaignStatus }) {
@@ -38,8 +38,8 @@ export function TypeBadge({
       className={cn(
         "inline-flex items-center gap-1 rounded-md px-2 py-1 text-[10.5px] font-semibold uppercase tracking-[0.04em]",
         type === "ugc"
-          ? "bg-studio-violet-soft text-studio-violet"
-          : "bg-[#eefbd9] text-[#3f6212]",
+          ? "bg-studio-accent-soft text-studio-accent"
+          : "bg-studio-highlight-soft text-studio-warning",
         className,
       )}
     >
@@ -50,15 +50,15 @@ export function TypeBadge({
 
 export function Progress({
   value,
-  tone = "violet",
+  tone = "accent",
   className,
 }: {
   value: number;
-  tone?: "violet" | "lime" | "ink";
+  tone?: "accent" | "highlight" | "ink";
   className?: string;
 }) {
   const bar =
-    tone === "lime" ? "bg-studio-lime" : tone === "ink" ? "bg-studio-ink" : "bg-studio-violet";
+    tone === "highlight" ? "bg-studio-highlight" : tone === "ink" ? "bg-studio-ink" : "bg-studio-accent";
   return (
     <div className={cn("h-1.5 w-full overflow-hidden rounded-full bg-studio-soft", className)}>
       <div className={cn("h-full rounded-full", bar)} style={{ width: `${Math.min(value, 100)}%` }} />
@@ -73,7 +73,7 @@ export function StatCard({
   delta,
   positive = true,
   icon,
-  accent = "violet",
+  accent = "accent",
 }: {
   label: string;
   value: string;
@@ -81,13 +81,13 @@ export function StatCard({
   delta?: string;
   positive?: boolean;
   icon?: ReactNode;
-  accent?: "violet" | "lime" | "ink" | "amber";
+  accent?: "accent" | "highlight" | "ink" | "warning";
 }) {
   const accentBg = {
-    violet: "bg-studio-violet-soft text-studio-violet",
-    lime: "bg-[#eefbd9] text-[#3f6212]",
+    accent: "bg-studio-accent-soft text-studio-accent",
+    highlight: "bg-studio-highlight-soft text-studio-warning",
     ink: "bg-studio-soft text-studio-ink",
-    amber: "bg-[#fff4d6] text-[#8a5a00]",
+    warning: "bg-studio-warning-soft text-studio-warning",
   }[accent];
 
   return (
@@ -110,7 +110,7 @@ export function StatCard({
         <p
           className={cn(
             "mt-2 inline-flex items-center gap-1 text-[11px] font-medium",
-            positive ? "text-[#2f6b1f]" : "text-[#a33b1f]",
+            positive ? "text-studio-success" : "text-studio-accent-dark",
           )}
         >
           {positive ? (

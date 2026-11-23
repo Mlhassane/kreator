@@ -13,17 +13,17 @@ export type CampaignStatus =
 
 export const statusMeta: Record<
   CampaignStatus,
-  { label: string; step: number; tone: "neutral" | "violet" | "amber" | "green" | "blue" }
+  { label: string; step: number; tone: "neutral" | "accent" | "warning" | "success" | "info" }
 > = {
   applied: { label: "Candidature envoyée", step: 1, tone: "neutral" },
-  accepted: { label: "Candidature acceptée", step: 2, tone: "violet" },
-  contract: { label: "Contrat à signer", step: 3, tone: "amber" },
-  production: { label: "Production en cours", step: 4, tone: "violet" },
-  submitted: { label: "Contenu soumis", step: 5, tone: "blue" },
-  revision: { label: "Révision demandée", step: 6, tone: "amber" },
-  approved: { label: "Contenu validé", step: 7, tone: "green" },
-  payment: { label: "Paiement en traitement", step: 8, tone: "blue" },
-  paid: { label: "Paiement effectué", step: 9, tone: "green" },
+  accepted: { label: "Candidature acceptée", step: 2, tone: "accent" },
+  contract: { label: "Contrat à signer", step: 3, tone: "warning" },
+  production: { label: "Production en cours", step: 4, tone: "accent" },
+  submitted: { label: "Contenu soumis", step: 5, tone: "info" },
+  revision: { label: "Révision demandée", step: 6, tone: "warning" },
+  approved: { label: "Contenu validé", step: 7, tone: "success" },
+  payment: { label: "Paiement en traitement", step: 8, tone: "info" },
+  paid: { label: "Paiement effectué", step: 9, tone: "success" },
 };
 
 export const statusOrder: CampaignStatus[] = [
@@ -114,7 +114,7 @@ export const myCampaigns: MyCampaign[] = [
     id: "beaute-naturelle",
     brand: "Beauty Africa",
     brandInitials: "BA",
-    brandTone: "from-[#7357ff] to-[#a78bfa]",
+    brandTone: "from-[#d9502b] to-[#efa92f]",
     title: "Beauté Naturelle",
     type: "ugc",
     status: "production",
@@ -231,7 +231,7 @@ export const myCampaigns: MyCampaign[] = [
     id: "wave-cash",
     brand: "Wave",
     brandInitials: "W",
-    brandTone: "from-[#1d4ed8] to-[#60a5fa]",
+    brandTone: "from-[#8a5a00] to-[#d9a24a]",
     title: "Campagne Wave Cash",
     type: "influencer",
     status: "payment",
@@ -390,7 +390,7 @@ export const opportunities: Opportunity[] = [
     id: "beauty-africa-skincare",
     brand: "Beauty Africa",
     brandInitials: "BA",
-    brandTone: "from-[#7357ff] to-[#a78bfa]",
+    brandTone: "from-[#d9502b] to-[#efa92f]",
     title: "Nouvelle collection skincare",
     sector: "Beauté & Lifestyle",
     city: "Niamey",
@@ -432,7 +432,7 @@ export const opportunities: Opportunity[] = [
     id: "glowlab-routine",
     brand: "GlowLab",
     brandInitials: "GL",
-    brandTone: "from-[#db2777] to-[#f9a8d4]",
+    brandTone: "from-[#9d3b5b] to-[#d98aa3]",
     title: "Routine éclat 7 jours",
     sector: "Beauté & Lifestyle",
     city: "Dakar",
@@ -474,7 +474,7 @@ export const opportunities: Opportunity[] = [
     id: "zuri-tech-lagos",
     brand: "Zuri Tech",
     brandInitials: "ZT",
-    brandTone: "from-[#1e3a8a] to-[#60a5fa]",
+    brandTone: "from-[#3f4a2e] to-[#d9a24a]",
     title: "Test smartphone nouvelle génération",
     sector: "Technologie",
     city: "Lagos",
@@ -517,7 +517,7 @@ export const opportunities: Opportunity[] = [
     id: "novapay-demo",
     brand: "NovaPay",
     brandInitials: "NP",
-    brandTone: "from-[#0f766e] to-[#5eead4]",
+    brandTone: "from-[#2f6b5e] to-[#7fbfae]",
     title: "Démo app de paiement",
     sector: "Fintech",
     city: "Abidjan",
@@ -538,7 +538,7 @@ export const opportunities: Opportunity[] = [
     id: "kora-unboxing",
     brand: "Kora Beauty",
     brandInitials: "KB",
-    brandTone: "from-[#7c3aed] to-[#c4b5fd]",
+    brandTone: "from-[#6b3f2a] to-[#b98a6a]",
     title: "Unboxing coffret",
     sector: "Beauté & Lifestyle",
     city: "Bamako",
@@ -606,7 +606,7 @@ export const earningRows: EarningRow[] = [
 
 export const payoutMethods = [
   { name: "Airtel Money", detail: "+227 •• 42", tone: "from-[#dc2626] to-[#f87171]", fee: "0 FCFA" },
-  { name: "Moov Money", detail: "+227 •• 87", tone: "from-[#2563eb] to-[#60a5fa]", fee: "0 FCFA" },
+  { name: "Moov Money", detail: "+227 •• 87", tone: "from-[#2563eb] to-[#d9a24a]", fee: "0 FCFA" },
   { name: "Banque", detail: "BIA Niger •• 3041", tone: "from-[#123a2c] to-[#3f8f6b]", fee: "1 000 FCFA" },
 ];
 
@@ -627,7 +627,7 @@ export const conversations: Conversation[] = [
     id: "beauty-africa",
     brand: "Beauty Africa",
     initials: "BA",
-    tone: "from-[#7357ff] to-[#a78bfa]",
+    tone: "from-[#d9502b] to-[#efa92f]",
     lastMessage: "Parfait, on valide la vidéo 1 !",
     time: "2 min",
     unread: 2,
@@ -673,7 +673,7 @@ export const conversations: Conversation[] = [
     id: "wave",
     brand: "Wave",
     initials: "W",
-    tone: "from-[#1d4ed8] to-[#60a5fa]",
+    tone: "from-[#8a5a00] to-[#d9a24a]",
     lastMessage: "Paiement envoyé ✅",
     time: "Hier",
     unread: 0,
@@ -704,7 +704,7 @@ export type ActivityItem = {
   title: string;
   detail: string;
   time: string;
-  tone: "violet" | "green" | "amber" | "blue";
+  tone: "accent" | "success" | "warning" | "info";
 };
 
 export const recentActivity: ActivityItem[] = [
@@ -714,7 +714,7 @@ export const recentActivity: ActivityItem[] = [
     title: "Nouvelle invitation d'une marque",
     detail: "Beauty Africa t'invite sur la campagne Beauté Naturelle.",
     time: "Il y a 12 min",
-    tone: "violet",
+    tone: "accent",
   },
   {
     id: "a2",
@@ -722,7 +722,7 @@ export const recentActivity: ActivityItem[] = [
     title: "Paiement reçu",
     detail: "Wave · Campagne Wave Cash · 60 000 FCFA.",
     time: "Il y a 2 h",
-    tone: "green",
+    tone: "success",
   },
   {
     id: "a3",
@@ -730,7 +730,7 @@ export const recentActivity: ActivityItem[] = [
     title: "Nouvelle campagne disponible",
     detail: "Sahel Style recrute des UGC creators à Niamey.",
     time: "Il y a 5 h",
-    tone: "amber",
+    tone: "warning",
   },
   {
     id: "a4",
@@ -738,7 +738,7 @@ export const recentActivity: ActivityItem[] = [
     title: "Contenu validé",
     detail: "Fashion House a validé tes 2 reels.",
     time: "Hier",
-    tone: "blue",
+    tone: "info",
   },
 ];
 
@@ -752,9 +752,9 @@ export const analyticsData = {
     { month: "Nov", value: 120 },
   ],
   platforms: [
-    { name: "TikTok", value: 120_000, share: 62, tone: "bg-[#151515]" },
-    { name: "Instagram", value: 58_000, share: 30, tone: "bg-[#7357ff]" },
-    { name: "YouTube", value: 12_000, share: 8, tone: "bg-[#c5f36b]" },
+    { name: "TikTok", value: 120_000, share: 62, tone: "bg-[#131110]" },
+    { name: "Instagram", value: 58_000, share: 30, tone: "bg-[#d9502b]" },
+    { name: "YouTube", value: 12_000, share: 8, tone: "bg-[#efa92f]" },
   ],
   geography: [
     { country: "Niger", share: 42 },
@@ -785,8 +785,8 @@ export const onboardingSteps = [
 ];
 
 export const portfolioItems = [
-  { id: "p1", label: "Routine Éclat", brand: "GlowLab", tone: "from-[#f9a8d4] to-[#fbcfe8]", type: "UGC" },
-  { id: "p2", label: "Unboxing Coffret", brand: "Kora Beauty", tone: "from-[#c4b5fd] to-[#ddd6fe]", type: "UGC" },
+  { id: "p1", label: "Routine Éclat", brand: "GlowLab", tone: "from-[#d98aa3] to-[#fbcfe8]", type: "UGC" },
+  { id: "p2", label: "Unboxing Coffret", brand: "Kora Beauty", tone: "from-[#b98a6a] to-[#f3d9c4]", type: "UGC" },
   { id: "p3", label: "Street Food", brand: "Teranga Foods", tone: "from-[#fdba74] to-[#fed7aa]", type: "UGC" },
   { id: "p4", label: "Collection Fête", brand: "Fashion House", tone: "from-[#e07a4f] to-[#f3b79c]", type: "Influence" },
   { id: "p5", label: "Tech & Lifestyle", brand: "Digital Store", tone: "from-[#3f8f6b] to-[#9ad4b8]", type: "UGC" },

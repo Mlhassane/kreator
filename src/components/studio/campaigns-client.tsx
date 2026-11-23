@@ -65,7 +65,7 @@ export function CampaignsClient() {
     <div className="space-y-5">
       <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
         <div>
-          <p className="text-[10.5px] font-semibold uppercase tracking-[0.16em] text-studio-violet">
+          <p className="text-[10.5px] font-semibold uppercase tracking-[0.16em] text-studio-accent">
             My Campaigns
           </p>
           <h1 className="mt-1.5 text-[26px] font-semibold tracking-[-0.03em] sm:text-[30px]">
@@ -91,7 +91,7 @@ export function CampaignsClient() {
                 className={cn(
                   "inline-flex items-center gap-1.5 rounded-lg px-2.5 py-1.5 text-[12px] font-medium transition-colors",
                   tab === t.id
-                    ? "bg-studio-violet text-white"
+                    ? "bg-studio-accent text-white"
                     : "text-studio-muted hover:bg-studio-soft hover:text-studio-ink",
                 )}
               >
@@ -114,7 +114,7 @@ export function CampaignsClient() {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Rechercher…"
-              className="h-9 w-full rounded-xl border border-studio-border bg-studio-bg pl-9 pr-8 text-[12px] outline-none transition-colors placeholder:text-studio-muted/80 focus:border-studio-violet/50 focus:bg-studio-surface"
+              className="h-9 w-full rounded-xl border border-studio-border bg-studio-bg pl-9 pr-8 text-[12px] outline-none transition-colors placeholder:text-studio-muted/80 focus:border-studio-accent/50 focus:bg-studio-surface"
             />
             {query && (
               <button

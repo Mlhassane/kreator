@@ -53,7 +53,7 @@ export default function StudioPortfolioPage() {
     <div className="space-y-5">
       <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
         <div>
-          <p className="text-[10.5px] font-semibold uppercase tracking-[0.16em] text-studio-violet">
+          <p className="text-[10.5px] font-semibold uppercase tracking-[0.16em] text-studio-accent">
             Portfolio
           </p>
           <h1 className="mt-1.5 text-[26px] font-semibold tracking-[-0.03em] sm:text-[30px]">
@@ -77,7 +77,7 @@ export default function StudioPortfolioPage() {
         <div className="space-y-4">
           {/* Aperçu profil */}
           <section className="studio-card overflow-hidden">
-            <div className="relative h-28 bg-gradient-to-br from-studio-violet via-[#8f7bff] to-[#c5f36b]/70 sm:h-32">
+            <div className="relative h-28 bg-gradient-to-br from-studio-accent via-[#e07a4f] to-[#efa92f]/70 sm:h-32">
               <div className="absolute inset-0 opacity-30 [background-image:radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.7)_1px,transparent_0)] [background-size:18px_18px]" />
             </div>
             <div className="px-4 pb-5 sm:px-5">
@@ -85,10 +85,10 @@ export default function StudioPortfolioPage() {
                 <Avatar
                   name={studioProfile.name}
                   photo={studioProfile.avatar}
-                  gradient="from-[#7357ff] to-[#a78bfa]"
+                  gradient="from-[#d9502b] to-[#efa92f]"
                   className="size-20 border-4 border-studio-surface text-lg"
                 />
-                <span className="mb-1 inline-flex items-center gap-1 rounded-full bg-[#e9f8e1] px-2.5 py-1 text-[10.5px] font-semibold text-[#2f6b1f]">
+                <span className="mb-1 inline-flex items-center gap-1 rounded-full bg-studio-success-soft px-2.5 py-1 text-[10.5px] font-semibold text-studio-success">
                   <BadgeCheck className="size-3.5" />
                   Profil vérifié
                 </span>
@@ -96,9 +96,9 @@ export default function StudioPortfolioPage() {
 
               <h2 className="mt-3 flex items-center gap-1.5 text-[19px] font-semibold tracking-[-0.02em]">
                 {studioProfile.name}
-                <BadgeCheck className="size-4 text-studio-violet" />
+                <BadgeCheck className="size-4 text-studio-accent" />
               </h2>
-              <p className="mt-0.5 text-[12px] font-medium text-studio-violet">
+              <p className="mt-0.5 text-[12px] font-medium text-studio-accent">
                 {studioProfile.title}
               </p>
               <p className="mt-1.5 flex items-center gap-1 text-[11.5px] text-studio-muted">
@@ -113,7 +113,7 @@ export default function StudioPortfolioPage() {
                 {studioProfile.niches.map((niche) => (
                   <span
                     key={niche}
-                    className="rounded-full bg-studio-violet-soft px-2.5 py-1 text-[10.5px] font-medium text-studio-violet"
+                    className="rounded-full bg-studio-accent-soft px-2.5 py-1 text-[10.5px] font-medium text-studio-accent"
                   >
                     {niche}
                   </span>
@@ -143,7 +143,7 @@ export default function StudioPortfolioPage() {
             title="Mon portfolio"
             subtitle={`${portfolioItems.length} créations publiées`}
             action={
-              <button className="text-[11.5px] font-medium text-studio-violet hover:underline">
+              <button className="text-[11.5px] font-medium text-studio-accent hover:underline">
                 Ajouter
               </button>
             }
@@ -182,7 +182,7 @@ export default function StudioPortfolioPage() {
             title="Services et tarifs"
             subtitle="Tarifs indicatifs, négociables selon le brief"
             action={
-              <button className="text-[11.5px] font-medium text-studio-violet hover:underline">
+              <button className="text-[11.5px] font-medium text-studio-accent hover:underline">
                 Modifier
               </button>
             }
@@ -248,17 +248,17 @@ export default function StudioPortfolioPage() {
             <Progress value={92} className="mt-2" />
             <ul className="mt-3 space-y-2 text-[11.5px] text-studio-muted">
               <li className="flex items-center gap-2">
-                <Sparkles className="size-3.5 text-studio-violet" />
+                <Sparkles className="size-3.5 text-studio-accent" />
                 Ajoute 2 créations pour atteindre 100 %.
               </li>
               <li className="flex items-center gap-2">
-                <ArrowUpRight className="size-3.5 text-studio-violet" />
+                <ArrowUpRight className="size-3.5 text-studio-accent" />
                 Les profils complets reçoivent 3× plus d&apos;invitations.
               </li>
             </ul>
             <Link
               href="/studio/profile"
-              className="mt-3 inline-flex items-center gap-1 text-[11.5px] font-medium text-studio-violet hover:underline"
+              className="mt-3 inline-flex items-center gap-1 text-[11.5px] font-medium text-studio-accent hover:underline"
             >
               Compléter mon profil
               <ArrowUpRight className="size-3.5" />

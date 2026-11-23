@@ -19,9 +19,9 @@ import { WithdrawButton } from "@/components/studio/withdraw-button";
 export const metadata: Metadata = { title: "Earnings" };
 
 const statusStyles = {
-  paid: "bg-[#e9f8e1] text-[#2f6b1f]",
-  pending: "bg-[#fff4d6] text-[#8a5a00]",
-  available: "bg-studio-violet-soft text-studio-violet",
+  paid: "bg-studio-success-soft text-studio-success",
+  pending: "bg-studio-warning-soft text-studio-warning",
+  available: "bg-studio-accent-soft text-studio-accent",
 } as const;
 
 const statusLabels = {
@@ -35,7 +35,7 @@ export default function StudioEarningsPage() {
     <div className="space-y-5">
       <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
         <div>
-          <p className="text-[10.5px] font-semibold uppercase tracking-[0.16em] text-studio-violet">
+          <p className="text-[10.5px] font-semibold uppercase tracking-[0.16em] text-studio-accent">
             Earnings
           </p>
           <h1 className="mt-1.5 text-[26px] font-semibold tracking-[-0.03em] sm:text-[30px]">
@@ -50,7 +50,7 @@ export default function StudioEarningsPage() {
       </div>
 
       <div className="grid gap-3 sm:grid-cols-3">
-        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-studio-violet to-[#9d86ff] p-5 text-white shadow-[0_24px_60px_-30px_rgba(115,87,255,0.9)]">
+        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-studio-accent to-[#e07a4f] p-5 text-white shadow-[0_24px_60px_-30px_rgba(217,80,43,0.9)]">
           <div className="pointer-events-none absolute -right-8 -top-10 size-32 rounded-full bg-white/15 blur-xl" />
           <div className="relative">
             <p className="flex items-center gap-1.5 text-[11px] font-medium text-white/75">
@@ -96,7 +96,7 @@ export default function StudioEarningsPage() {
             </span>
             <span className="text-[11px] text-studio-muted">FCFA</span>
           </p>
-          <p className="mt-2 inline-flex items-center gap-1 text-[10.5px] font-medium text-[#2f6b1f]">
+          <p className="mt-2 inline-flex items-center gap-1 text-[10.5px] font-medium text-studio-success">
             <ArrowUpRight className="size-3.5" />
             +18 % vs mois dernier
           </p>
@@ -138,7 +138,7 @@ export default function StudioEarningsPage() {
                     </td>
                     <td className="whitespace-nowrap px-4 py-3 text-right font-semibold sm:px-5">
                       {row.status === "paid" ? (
-                        <span className="text-[#2f6b1f]">+{formatFcfa(row.amount)}</span>
+                        <span className="text-studio-success">+{formatFcfa(row.amount)}</span>
                       ) : (
                         formatFcfa(row.amount)
                       )}
@@ -182,7 +182,7 @@ export default function StudioEarningsPage() {
 
           <SectionCard title="Transparence">
             <div className="flex items-start gap-2.5">
-              <span className="grid size-8 shrink-0 place-items-center rounded-lg bg-[#e9f8e1] text-[#2f6b1f]">
+              <span className="grid size-8 shrink-0 place-items-center rounded-lg bg-studio-success-soft text-studio-success">
                 <ShieldCheck className="size-4" />
               </span>
               <p className="text-[11.5px] leading-relaxed text-studio-muted">

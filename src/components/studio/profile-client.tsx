@@ -84,7 +84,7 @@ export function ProfileClient() {
     <div className="space-y-5">
       <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
         <div>
-          <p className="text-[10.5px] font-semibold uppercase tracking-[0.16em] text-studio-violet">
+          <p className="text-[10.5px] font-semibold uppercase tracking-[0.16em] text-studio-accent">
             Profile
           </p>
           <h1 className="mt-1.5 text-[26px] font-semibold tracking-[-0.03em] sm:text-[30px]">
@@ -117,7 +117,7 @@ export function ProfileClient() {
             title="Identité"
             subtitle="Ce que les marques voient en premier"
             action={
-              <span className="inline-flex items-center gap-1 rounded-full bg-[#e9f8e1] px-2.5 py-1 text-[10.5px] font-semibold text-[#2f6b1f]">
+              <span className="inline-flex items-center gap-1 rounded-full bg-studio-success-soft px-2.5 py-1 text-[10.5px] font-semibold text-studio-success">
                 <BadgeCheck className="size-3.5" />
                 Vérifié
               </span>
@@ -127,7 +127,7 @@ export function ProfileClient() {
               <Avatar
                 name={studioProfile.name}
                 photo={studioProfile.avatar}
-                gradient="from-[#7357ff] to-[#a78bfa]"
+                gradient="from-[#d9502b] to-[#efa92f]"
                 className="size-16 text-base"
               />
               <div className="flex-1">
@@ -135,7 +135,7 @@ export function ProfileClient() {
                 <p className="text-[11.5px] text-studio-muted">
                   {studioProfile.handle} · {studioProfile.flag} {studioProfile.city}
                 </p>
-                <button className="mt-2 text-[11.5px] font-medium text-studio-violet hover:underline">
+                <button className="mt-2 text-[11.5px] font-medium text-studio-accent hover:underline">
                   Changer la photo
                 </button>
               </div>
@@ -155,7 +155,7 @@ export function ProfileClient() {
               value={bio}
               onChange={(e) => setBio(e.target.value)}
               rows={3}
-              className="mt-1.5 w-full resize-none rounded-xl border border-studio-border bg-studio-bg px-3 py-2.5 text-[12px] leading-relaxed outline-none transition-colors focus:border-studio-violet/50 focus:bg-studio-surface"
+              className="mt-1.5 w-full resize-none rounded-xl border border-studio-border bg-studio-bg px-3 py-2.5 text-[12px] leading-relaxed outline-none transition-colors focus:border-studio-accent/50 focus:bg-studio-surface"
             />
           </SectionCard>
 
@@ -174,15 +174,15 @@ export function ProfileClient() {
                     className={cn(
                       "rounded-xl border p-3 text-left transition-all",
                       active
-                        ? "border-studio-violet bg-studio-violet-soft"
-                        : "border-studio-border bg-studio-bg hover:border-studio-violet/30",
+                        ? "border-studio-accent bg-studio-accent-soft"
+                        : "border-studio-border bg-studio-bg hover:border-studio-accent/30",
                     )}
                   >
                     <span
                       className={cn(
                         "grid size-8 place-items-center rounded-lg",
                         active
-                          ? "bg-studio-violet text-white"
+                          ? "bg-studio-accent text-white"
                           : "bg-studio-surface text-studio-muted",
                       )}
                     >
@@ -205,7 +205,7 @@ export function ProfileClient() {
             <div className="grid gap-3 sm:grid-cols-2">
               <label className="block">
                 <span className="text-[11.5px] font-medium text-studio-ink/70">Pays</span>
-                <select className="mt-1.5 h-10 w-full rounded-xl border border-studio-border bg-studio-bg px-3 text-[12px] outline-none focus:border-studio-violet/50">
+                <select className="mt-1.5 h-10 w-full rounded-xl border border-studio-border bg-studio-bg px-3 text-[12px] outline-none focus:border-studio-accent/50">
                   <option>Niger</option>
                   <option>Côte d&apos;Ivoire</option>
                   <option>Sénégal</option>
@@ -230,7 +230,7 @@ export function ProfileClient() {
                     className={cn(
                       "inline-flex items-center gap-1 rounded-full px-2.5 py-1.5 text-[11px] font-medium transition-colors",
                       active
-                        ? "bg-studio-violet text-white"
+                        ? "bg-studio-accent text-white"
                         : "bg-studio-soft text-studio-muted hover:text-studio-ink",
                     )}
                   >
@@ -257,7 +257,7 @@ export function ProfileClient() {
                   <div className="flex-1">
                     <input
                       defaultValue={social.value}
-                      className="h-9 w-full rounded-lg border border-studio-border bg-studio-bg px-2.5 text-[12px] outline-none focus:border-studio-violet/50 focus:bg-studio-surface"
+                      className="h-9 w-full rounded-lg border border-studio-border bg-studio-bg px-2.5 text-[12px] outline-none focus:border-studio-accent/50 focus:bg-studio-surface"
                     />
                   </div>
                   <span className="w-14 shrink-0 text-right text-[11px] text-studio-muted">
@@ -301,7 +301,7 @@ export function ProfileClient() {
           >
             <div className="grid gap-2.5 sm:grid-cols-2">
               <div className="flex items-center gap-2.5 rounded-xl border border-studio-border bg-studio-bg px-3 py-2.5">
-                <span className="grid size-8 place-items-center rounded-lg bg-studio-violet-soft text-studio-violet">
+                <span className="grid size-8 place-items-center rounded-lg bg-studio-accent-soft text-studio-accent">
                   <Smartphone className="size-4" />
                 </span>
                 <div>
@@ -330,7 +330,7 @@ export function ProfileClient() {
           <SectionCard
             title="Complétude du profil"
             action={
-              <span className="rounded-full bg-studio-violet-soft px-2.5 py-1 text-[11px] font-semibold text-studio-violet">
+              <span className="rounded-full bg-studio-accent-soft px-2.5 py-1 text-[11px] font-semibold text-studio-accent">
                 {studioProfile.completion} %
               </span>
             }
@@ -340,7 +340,7 @@ export function ProfileClient() {
               {onboardingSteps.map((step) => (
                 <li key={step.label} className="flex items-center gap-2.5 text-[11.5px]">
                   {step.done ? (
-                    <CheckCircle2 className="size-4 shrink-0 text-[#2f6b1f]" />
+                    <CheckCircle2 className="size-4 shrink-0 text-studio-success" />
                   ) : (
                     <span className="grid size-4 shrink-0 place-items-center rounded-full border border-dashed border-studio-border">
                       <span className="size-1.5 rounded-full bg-studio-muted/50" />
@@ -377,7 +377,7 @@ export function ProfileClient() {
 
           <div className="rounded-2xl border border-dashed border-studio-border bg-studio-surface/60 p-4">
             <div className="flex items-center gap-2">
-              <Wallet className="size-4 text-studio-violet" />
+              <Wallet className="size-4 text-studio-accent" />
               <p className="text-[12px] font-semibold">Paiements sécurisés</p>
             </div>
             <p className="mt-1.5 text-[10.5px] leading-relaxed text-studio-muted">
@@ -391,7 +391,7 @@ export function ProfileClient() {
       {saved && (
         <div className="fixed bottom-24 left-1/2 z-50 -translate-x-1/2 rounded-xl bg-studio-ink px-4 py-2.5 text-[12px] font-medium text-white shadow-studio-pop lg:bottom-6">
           <span className="inline-flex items-center gap-2">
-            <Check className="size-4 text-studio-lime" />
+            <Check className="size-4 text-studio-highlight" />
             Profil enregistré
           </span>
         </div>
@@ -418,7 +418,7 @@ function Field({
         defaultValue={value === undefined ? defaultValue : undefined}
         value={value}
         onChange={onChange}
-        className="mt-1.5 h-10 w-full rounded-xl border border-studio-border bg-studio-bg px-3 text-[12px] outline-none transition-colors focus:border-studio-violet/50 focus:bg-studio-surface"
+        className="mt-1.5 h-10 w-full rounded-xl border border-studio-border bg-studio-bg px-3 text-[12px] outline-none transition-colors focus:border-studio-accent/50 focus:bg-studio-surface"
       />
     </label>
   );

@@ -77,7 +77,7 @@ export default async function PublicPortfolioPage({
           <StudioLogo />
           <Link
             href="/inscription"
-            className="inline-flex h-9 items-center gap-1.5 rounded-xl bg-studio-violet px-3.5 text-[12px] font-medium text-white transition-colors hover:bg-studio-violet-dark"
+            className="inline-flex h-9 items-center gap-1.5 rounded-xl bg-studio-accent px-3.5 text-[12px] font-medium text-white transition-colors hover:bg-studio-accent-dark"
           >
             Créer mon portfolio
             <ExternalLink className="size-3.5" />
@@ -88,7 +88,7 @@ export default async function PublicPortfolioPage({
       <main className="mx-auto w-full max-w-4xl px-4 pb-16 pt-6 sm:px-6">
         {/* Profil */}
         <section className="studio-card overflow-hidden">
-          <div className="relative h-32 bg-gradient-to-br from-studio-violet via-[#8f7bff] to-[#c5f36b]/70 sm:h-40">
+          <div className="relative h-32 bg-gradient-to-br from-studio-accent via-[#e07a4f] to-[#efa92f]/70 sm:h-40">
             <div className="absolute inset-0 opacity-30 [background-image:radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.7)_1px,transparent_0)] [background-size:18px_18px]" />
           </div>
           <div className="px-4 pb-6 sm:px-6">
@@ -102,14 +102,14 @@ export default async function PublicPortfolioPage({
               <div className="mb-1 flex flex-wrap gap-2">
                 <Link
                   href="/inscription"
-                  className="inline-flex h-10 items-center gap-1.5 rounded-xl bg-studio-violet px-4 text-[12.5px] font-medium text-white transition-colors hover:bg-studio-violet-dark"
+                  className="inline-flex h-10 items-center gap-1.5 rounded-xl bg-studio-accent px-4 text-[12.5px] font-medium text-white transition-colors hover:bg-studio-accent-dark"
                 >
                   <MessageCircle className="size-4" />
                   Collaborer avec {creator.name.split(" ")[0]}
                 </Link>
                 <Link
                   href="/connexion"
-                  className="inline-flex h-10 items-center rounded-xl border border-studio-border bg-studio-surface px-4 text-[12.5px] font-medium text-studio-ink transition-colors hover:border-studio-violet/40 hover:text-studio-violet"
+                  className="inline-flex h-10 items-center rounded-xl border border-studio-border bg-studio-surface px-4 text-[12.5px] font-medium text-studio-ink transition-colors hover:border-studio-accent/40 hover:text-studio-accent"
                 >
                   Contacter
                 </Link>
@@ -118,9 +118,9 @@ export default async function PublicPortfolioPage({
 
             <h1 className="mt-4 flex items-center gap-2 text-[24px] font-semibold tracking-[-0.03em] sm:text-[28px]">
               {creator.name}
-              {creator.verified && <BadgeCheck className="size-5 text-studio-violet" />}
+              {creator.verified && <BadgeCheck className="size-5 text-studio-accent" />}
             </h1>
-            <p className="mt-1 text-[12.5px] font-medium text-studio-violet">
+            <p className="mt-1 text-[12.5px] font-medium text-studio-accent">
               {creator.niche} Creator · {creator.tags.slice(0, 2).join(" · ")}
             </p>
             <p className="mt-1.5 flex items-center gap-1 text-[12px] text-studio-muted">
@@ -135,7 +135,7 @@ export default async function PublicPortfolioPage({
               {creator.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="rounded-full bg-studio-violet-soft px-2.5 py-1 text-[10.5px] font-medium text-studio-violet"
+                  className="rounded-full bg-studio-accent-soft px-2.5 py-1 text-[10.5px] font-medium text-studio-accent"
                 >
                   {tag}
                 </span>
@@ -233,7 +233,7 @@ export default async function PublicPortfolioPage({
                 href={social.href}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-xl border border-studio-border bg-studio-bg px-3 py-2 text-[12px] font-medium text-studio-ink/80 transition-colors hover:border-studio-violet/40 hover:text-studio-violet"
+                className="inline-flex items-center gap-2 rounded-xl border border-studio-border bg-studio-bg px-3 py-2 text-[12px] font-medium text-studio-ink/80 transition-colors hover:border-studio-accent/40 hover:text-studio-accent"
               >
                 <social.icon className="size-4" />
                 {social.name}

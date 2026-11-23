@@ -43,7 +43,7 @@ export function CampaignCard({
     <Link
       href={`/studio/campaigns/${campaign.id}`}
       className={cn(
-        "group studio-card flex flex-col p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-studio-violet/35 hover:shadow-studio-pop",
+        "group studio-card flex flex-col p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-studio-accent/35 hover:shadow-studio-pop",
         className,
       )}
     >
@@ -82,11 +82,11 @@ export function CampaignCard({
           <span>Progression</span>
           <span className="font-medium text-studio-ink/70">{campaign.progress}%</span>
         </div>
-        <Progress value={campaign.progress} tone={campaign.status === "paid" ? "lime" : "violet"} />
+        <Progress value={campaign.progress} tone={campaign.status === "paid" ? "highlight" : "accent"} />
       </div>
 
       {campaign.unread > 0 && (
-        <div className="mt-3 flex items-center gap-1.5 text-[10.5px] font-medium text-studio-violet">
+        <div className="mt-3 flex items-center gap-1.5 text-[10.5px] font-medium text-studio-accent">
           <MessageSquare className="size-3.5" />
           {campaign.unread} nouveau{campaign.unread > 1 ? "x" : ""} message
           {campaign.unread > 1 ? "s" : ""}

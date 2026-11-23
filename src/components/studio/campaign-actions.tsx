@@ -45,14 +45,14 @@ export function CampaignActions({ brand }: { brand: string }) {
             </div>
 
             {sent ? (
-              <div className="mt-5 flex flex-col items-center rounded-xl bg-[#e9f8e1] px-4 py-6 text-center">
-                <span className="grid size-10 place-items-center rounded-full bg-white text-[#2f6b1f]">
+              <div className="mt-5 flex flex-col items-center rounded-xl bg-studio-success-soft px-4 py-6 text-center">
+                <span className="grid size-10 place-items-center rounded-full bg-studio-surface text-studio-success">
                   <Check className="size-5" strokeWidth={3} />
                 </span>
-                <p className="mt-3 text-[13px] font-semibold text-[#2f6b1f]">
+                <p className="mt-3 text-[13px] font-semibold text-studio-success">
                   Livrable envoyé pour validation
                 </p>
-                <p className="mt-1 text-[11.5px] text-[#2f6b1f]/80">
+                <p className="mt-1 text-[11.5px] text-studio-success/80">
                   Tu recevras une réponse sous 48 h.
                 </p>
                 <StudioButton variant="outline" size="sm" className="mt-4" onClick={close}>
@@ -61,8 +61,8 @@ export function CampaignActions({ brand }: { brand: string }) {
               </div>
             ) : (
               <>
-                <label className="mt-4 flex cursor-pointer flex-col items-center justify-center rounded-xl border border-dashed border-studio-border bg-studio-bg px-4 py-6 text-center transition-colors hover:border-studio-violet/40">
-                  <span className="grid size-10 place-items-center rounded-full bg-studio-violet-soft text-studio-violet">
+                <label className="mt-4 flex cursor-pointer flex-col items-center justify-center rounded-xl border border-dashed border-studio-border bg-studio-bg px-4 py-6 text-center transition-colors hover:border-studio-accent/40">
+                  <span className="grid size-10 place-items-center rounded-full bg-studio-accent-soft text-studio-accent">
                     <Upload className="size-4" />
                   </span>
                   <span className="mt-2 text-[12.5px] font-medium">
@@ -84,7 +84,7 @@ export function CampaignActions({ brand }: { brand: string }) {
                       value={link}
                       onChange={(e) => setLink(e.target.value)}
                       placeholder="https://drive.google.com/…"
-                      className="h-10 w-full rounded-xl border border-studio-border bg-studio-bg pl-9 pr-3 text-[12px] outline-none transition-colors placeholder:text-studio-muted/70 focus:border-studio-violet/50 focus:bg-studio-surface"
+                      className="h-10 w-full rounded-xl border border-studio-border bg-studio-bg pl-9 pr-3 text-[12px] outline-none transition-colors placeholder:text-studio-muted/70 focus:border-studio-accent/50 focus:bg-studio-surface"
                     />
                   </div>
                 </div>

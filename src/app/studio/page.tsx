@@ -34,10 +34,10 @@ const activityIcons = {
 } as const;
 
 const activityTones = {
-  violet: "bg-studio-violet-soft text-studio-violet",
-  green: "bg-[#e9f8e1] text-[#2f6b1f]",
-  amber: "bg-[#fff4d6] text-[#8a5a00]",
-  blue: "bg-[#e7f0ff] text-[#1f4fa8]",
+  accent: "bg-studio-accent-soft text-studio-accent",
+  success: "bg-studio-success-soft text-studio-success",
+  warning: "bg-studio-warning-soft text-studio-warning",
+  info: "bg-studio-soft text-studio-ink",
 } as const;
 
 export default function StudioOverviewPage() {
@@ -87,7 +87,7 @@ export default function StudioOverviewPage() {
           unit="en cours"
           delta="+2 cette semaine"
           icon={<FolderKanban className="size-4" />}
-          accent="lime"
+          accent="highlight"
         />
         <StatCard
           label="En attente"
@@ -96,7 +96,7 @@ export default function StudioOverviewPage() {
           delta="2 contenus à valider"
           positive={false}
           icon={<Zap className="size-4" />}
-          accent="amber"
+          accent="warning"
         />
         <StatCard
           label="Reputation Score"
@@ -110,9 +110,9 @@ export default function StudioOverviewPage() {
 
       {/* Opportunités + profil */}
       <div className="grid gap-3 lg:grid-cols-[1.45fr_1fr]">
-        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-studio-violet to-[#9d86ff] p-5 text-white shadow-[0_24px_60px_-30px_rgba(115,87,255,0.9)] sm:p-6">
+        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-studio-accent to-[#e07a4f] p-5 text-white shadow-[0_24px_60px_-30px_rgba(217,80,43,0.9)] sm:p-6">
           <div className="pointer-events-none absolute -right-10 -top-16 size-56 rounded-full bg-white/15 blur-2xl" />
-          <div className="pointer-events-none absolute -bottom-20 right-16 size-44 rounded-full bg-studio-lime/25 blur-2xl" />
+          <div className="pointer-events-none absolute -bottom-20 right-16 size-44 rounded-full bg-studio-highlight/25 blur-2xl" />
 
           <div className="relative">
             <p className="text-[10.5px] font-semibold uppercase tracking-[0.16em] text-white/70">
@@ -158,7 +158,7 @@ export default function StudioOverviewPage() {
           title="Profil créateur"
           subtitle={`Complété à ${studioProfile.completion} %`}
           action={
-            <span className="rounded-full bg-studio-violet-soft px-2.5 py-1 text-[11px] font-semibold text-studio-violet">
+            <span className="rounded-full bg-studio-accent-soft px-2.5 py-1 text-[11px] font-semibold text-studio-accent">
               {studioProfile.completion} %
             </span>
           }
@@ -172,7 +172,7 @@ export default function StudioOverviewPage() {
                   className={cn(
                     "grid size-5 shrink-0 place-items-center rounded-full",
                     step.done
-                      ? "bg-[#e9f8e1] text-[#2f6b1f]"
+                      ? "bg-studio-success-soft text-studio-success"
                       : "border border-dashed border-studio-border text-studio-muted",
                   )}
                 >
@@ -213,7 +213,7 @@ export default function StudioOverviewPage() {
           </div>
           <Link
             href="/studio/campaigns"
-            className="inline-flex items-center gap-1 text-[12px] font-medium text-studio-violet hover:underline"
+            className="inline-flex items-center gap-1 text-[12px] font-medium text-studio-accent hover:underline"
           >
             Tout voir
             <ArrowRight className="size-3.5" />
@@ -265,7 +265,7 @@ export default function StudioOverviewPage() {
           action={
             <Link
               href="/studio/earnings"
-              className="text-[11.5px] font-medium text-studio-violet hover:underline"
+              className="text-[11.5px] font-medium text-studio-accent hover:underline"
             >
               Détails
             </Link>
@@ -308,7 +308,7 @@ export default function StudioOverviewPage() {
       {/* Lien rapide */}
       <div className="flex flex-col items-start justify-between gap-3 rounded-2xl border border-dashed border-studio-border bg-studio-surface/60 px-5 py-4 sm:flex-row sm:items-center">
         <div className="flex items-center gap-3">
-          <span className="grid size-9 place-items-center rounded-xl bg-studio-violet-soft text-studio-violet">
+          <span className="grid size-9 place-items-center rounded-xl bg-studio-accent-soft text-studio-accent">
             <Sparkles className="size-4" />
           </span>
           <div>
@@ -320,7 +320,7 @@ export default function StudioOverviewPage() {
         </div>
         <Link
           href="/studio/portfolio"
-          className="inline-flex items-center gap-1.5 text-[12px] font-medium text-studio-violet hover:underline"
+          className="inline-flex items-center gap-1.5 text-[12px] font-medium text-studio-accent hover:underline"
         >
           Voir ma page publique
           <ArrowUpRight className="size-3.5" />

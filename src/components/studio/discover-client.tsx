@@ -124,7 +124,7 @@ export function DiscoverClient() {
       {/* En-tête */}
       <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
         <div>
-          <p className="text-[10.5px] font-semibold uppercase tracking-[0.16em] text-studio-violet">
+          <p className="text-[10.5px] font-semibold uppercase tracking-[0.16em] text-studio-accent">
             Discover
           </p>
           <h1 className="mt-1.5 text-[26px] font-semibold tracking-[-0.03em] sm:text-[30px]">
@@ -135,7 +135,7 @@ export function DiscoverClient() {
           </p>
         </div>
         <div className="flex items-center gap-2 rounded-xl border border-studio-border bg-studio-surface px-3 py-2 text-[11.5px] text-studio-muted">
-          <Sparkles className="size-4 text-studio-violet" />
+          <Sparkles className="size-4 text-studio-accent" />
           Matching basé sur ton profil, tes niches et ta localisation
         </div>
       </div>
@@ -149,7 +149,7 @@ export function DiscoverClient() {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Rechercher une marque, une campagne, une niche…"
-              className="h-10 w-full rounded-xl border border-studio-border bg-studio-bg pl-9 pr-9 text-[13px] text-studio-ink outline-none transition-colors placeholder:text-studio-muted/80 focus:border-studio-violet/50 focus:bg-studio-surface"
+              className="h-10 w-full rounded-xl border border-studio-border bg-studio-bg pl-9 pr-9 text-[13px] text-studio-ink outline-none transition-colors placeholder:text-studio-muted/80 focus:border-studio-accent/50 focus:bg-studio-surface"
             />
             {query && (
               <button
@@ -224,7 +224,7 @@ export function DiscoverClient() {
               className={cn(
                 "rounded-full px-2.5 py-1 text-[11px] font-medium transition-colors",
                 access === item.value
-                  ? "bg-studio-violet text-white"
+                  ? "bg-studio-accent text-white"
                   : "bg-studio-soft text-studio-muted hover:text-studio-ink",
               )}
             >
@@ -235,7 +235,7 @@ export function DiscoverClient() {
           {hasFilters && (
             <button
               onClick={reset}
-              className="ml-auto inline-flex items-center gap-1 text-[11px] font-medium text-studio-violet hover:underline"
+              className="ml-auto inline-flex items-center gap-1 text-[11px] font-medium text-studio-accent hover:underline"
             >
               <X className="size-3" />
               Réinitialiser
@@ -276,7 +276,7 @@ export function DiscoverClient() {
             return (
               <article
                 key={o.id}
-                className="group studio-card flex flex-col p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-studio-violet/35 hover:shadow-studio-pop"
+                className="group studio-card flex flex-col p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-studio-accent/35 hover:shadow-studio-pop"
               >
                 <div className="flex items-start gap-3">
                   <BrandMark initials={o.brandInitials} tone={o.brandTone} />
@@ -284,12 +284,12 @@ export function DiscoverClient() {
                     <div className="flex items-center gap-1">
                       <p className="truncate text-[12.5px] font-semibold">{o.brand}</p>
                       {o.verified && (
-                        <BadgeCheck className="size-3.5 shrink-0 text-studio-violet" />
+                        <BadgeCheck className="size-3.5 shrink-0 text-studio-accent" />
                       )}
                     </div>
                     <p className="mt-0.5 text-[10.5px] text-studio-muted">{o.posted}</p>
                   </div>
-                  <span className="shrink-0 rounded-full bg-studio-violet-soft px-2 py-1 text-[10.5px] font-semibold text-studio-violet">
+                  <span className="shrink-0 rounded-full bg-studio-accent-soft px-2 py-1 text-[10.5px] font-semibold text-studio-accent">
                     {o.match} % match
                   </span>
                 </div>
@@ -301,7 +301,7 @@ export function DiscoverClient() {
                 <div className="mt-2 flex flex-wrap items-center gap-1.5">
                   <TypeBadge type={o.type} />
                   {isPrivate && (
-                    <span className="inline-flex items-center gap-1 rounded-md bg-[#fff4d6] px-2 py-1 text-[10.5px] font-semibold text-[#8a5a00]">
+                    <span className="inline-flex items-center gap-1 rounded-md bg-studio-warning-soft px-2 py-1 text-[10.5px] font-semibold text-studio-warning">
                       <Lock className="size-3" />
                       Invitation
                     </span>
@@ -355,7 +355,7 @@ export function DiscoverClient() {
                 <div className="mt-3 flex items-center gap-2">
                   <button
                     onClick={() => setSelected(o)}
-                    className="h-9 flex-1 rounded-xl border border-studio-border bg-studio-surface text-[12px] font-medium text-studio-ink transition-colors hover:border-studio-violet/40 hover:text-studio-violet"
+                    className="h-9 flex-1 rounded-xl border border-studio-border bg-studio-surface text-[12px] font-medium text-studio-ink transition-colors hover:border-studio-accent/40 hover:text-studio-accent"
                   >
                     Voir la campagne
                   </button>
@@ -365,8 +365,8 @@ export function DiscoverClient() {
                     className={cn(
                       "inline-flex h-9 flex-1 items-center justify-center gap-1.5 rounded-xl text-[12px] font-medium transition-all",
                       isApplied
-                        ? "cursor-default bg-[#e9f8e1] text-[#2f6b1f]"
-                        : "bg-studio-violet text-white hover:bg-studio-violet-dark",
+                        ? "cursor-default bg-studio-success-soft text-studio-success"
+                        : "bg-studio-accent text-white hover:bg-studio-accent-dark",
                     )}
                   >
                     {isApplied ? (
@@ -407,7 +407,7 @@ export function DiscoverClient() {
                 <div className="flex items-center gap-1">
                   <p className="text-[13px] font-semibold">{selected.brand}</p>
                   {selected.verified && (
-                    <BadgeCheck className="size-3.5 text-studio-violet" />
+                    <BadgeCheck className="size-3.5 text-studio-accent" />
                   )}
                 </div>
                 <h2 className="mt-0.5 text-[18px] font-semibold tracking-[-0.02em]">
@@ -428,7 +428,7 @@ export function DiscoverClient() {
               <span className="rounded-md bg-studio-soft px-2 py-1 text-[10.5px] font-medium text-studio-muted">
                 {selected.sector}
               </span>
-              <span className="rounded-md bg-studio-violet-soft px-2 py-1 text-[10.5px] font-semibold text-studio-violet">
+              <span className="rounded-md bg-studio-accent-soft px-2 py-1 text-[10.5px] font-semibold text-studio-accent">
                 {selected.match} % match
               </span>
             </div>
@@ -507,7 +507,7 @@ export function DiscoverClient() {
       {toast && (
         <div className="fixed bottom-24 left-1/2 z-50 w-[calc(100%-2rem)] max-w-sm -translate-x-1/2 rounded-xl border border-studio-border bg-studio-ink px-4 py-3 text-[12px] text-white shadow-studio-pop lg:bottom-6">
           <div className="flex items-start gap-2">
-            <Check className="mt-0.5 size-4 shrink-0 text-studio-lime" />
+            <Check className="mt-0.5 size-4 shrink-0 text-studio-highlight" />
             <p className="leading-relaxed">{toast}</p>
           </div>
         </div>
@@ -530,7 +530,7 @@ function Select({
       <select
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="h-9 appearance-none rounded-xl border border-studio-border bg-studio-bg pl-3 pr-8 text-[11.5px] font-medium text-studio-ink outline-none transition-colors focus:border-studio-violet/50"
+        className="h-9 appearance-none rounded-xl border border-studio-border bg-studio-bg pl-3 pr-8 text-[11.5px] font-medium text-studio-ink outline-none transition-colors focus:border-studio-accent/50"
       >
         {options.map((option) => (
           <option key={option} value={option}>

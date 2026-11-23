@@ -48,14 +48,14 @@ export function WithdrawButton({ available }: { available: number }) {
             </div>
 
             {done ? (
-              <div className="mt-5 flex flex-col items-center rounded-xl bg-[#e9f8e1] px-4 py-6 text-center">
-                <span className="grid size-10 place-items-center rounded-full bg-white text-[#2f6b1f]">
+              <div className="mt-5 flex flex-col items-center rounded-xl bg-studio-success-soft px-4 py-6 text-center">
+                <span className="grid size-10 place-items-center rounded-full bg-studio-surface text-studio-success">
                   <Check className="size-5" strokeWidth={3} />
                 </span>
-                <p className="mt-3 text-[13px] font-semibold text-[#2f6b1f]">
+                <p className="mt-3 text-[13px] font-semibold text-studio-success">
                   Demande de retrait envoyée
                 </p>
-                <p className="mt-1 text-[11.5px] text-[#2f6b1f]/80">
+                <p className="mt-1 text-[11.5px] text-studio-success/80">
                   {formatFcfa(Number(amount) || 0)} FCFA via {method}. Traitement sous 48 h.
                 </p>
                 <StudioButton variant="outline" size="sm" className="mt-4" onClick={close}>
@@ -71,7 +71,7 @@ export function WithdrawButton({ available }: { available: number }) {
                   value={amount}
                   onChange={(e) => setAmount(e.target.value.replace(/[^\d]/g, ""))}
                   inputMode="numeric"
-                  className="mt-1.5 h-11 w-full rounded-xl border border-studio-border bg-studio-bg px-3 text-[15px] font-semibold outline-none transition-colors focus:border-studio-violet/50 focus:bg-studio-surface"
+                  className="mt-1.5 h-11 w-full rounded-xl border border-studio-border bg-studio-bg px-3 text-[15px] font-semibold outline-none transition-colors focus:border-studio-accent/50 focus:bg-studio-surface"
                 />
 
                 <p className="mt-4 text-[11.5px] font-medium text-studio-ink/70">
@@ -84,8 +84,8 @@ export function WithdrawButton({ available }: { available: number }) {
                       onClick={() => setMethod(option.name)}
                       className={`flex w-full items-center justify-between rounded-xl border px-3 py-2.5 text-left transition-colors ${
                         method === option.name
-                          ? "border-studio-violet bg-studio-violet-soft"
-                          : "border-studio-border bg-studio-bg hover:border-studio-violet/30"
+                          ? "border-studio-accent bg-studio-accent-soft"
+                          : "border-studio-border bg-studio-bg hover:border-studio-accent/30"
                       }`}
                     >
                       <span>

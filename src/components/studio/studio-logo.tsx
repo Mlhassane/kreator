@@ -14,7 +14,7 @@ export function StudioLogo({
       className={cn("flex items-center gap-2.5", className)}
       aria-label="Kreator Studio — accueil"
     >
-      <span className="relative grid size-9 place-items-center overflow-hidden rounded-xl bg-studio-violet text-white shadow-[0_8px_20px_-8px_rgba(115,87,255,0.9)]">
+      <span className="relative grid size-9 place-items-center overflow-hidden rounded-xl bg-studio-accent text-white shadow-[0_8px_20px_-8px_rgba(217,80,43,0.9)]">
         <span className="absolute inset-0 bg-gradient-to-br from-white/25 to-transparent" />
         <svg viewBox="0 0 24 24" className="relative size-[18px]" fill="none" aria-hidden="true">
           <path

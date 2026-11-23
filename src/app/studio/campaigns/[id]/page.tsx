@@ -93,7 +93,7 @@ export default async function CampaignDetailPage({
                   <CalendarDays className="size-3.5" />
                   Échéance {campaign.deadline}
                 </span>
-                <span className="inline-flex items-center gap-1 rounded-full bg-studio-violet-soft px-2.5 py-1 text-[11px] font-semibold text-studio-violet">
+                <span className="inline-flex items-center gap-1 rounded-full bg-studio-accent-soft px-2.5 py-1 text-[11px] font-semibold text-studio-accent">
                   <Wallet className="size-3.5" />
                   {formatFcfa(campaign.budget)} FCFA
                 </span>
@@ -117,7 +117,7 @@ export default async function CampaignDetailPage({
               Étape {currentStep} / 9
             </span>
           </div>
-          <Progress value={(currentStep / 9) * 100} tone={campaign.status === "paid" ? "lime" : "violet"} />
+          <Progress value={(currentStep / 9) * 100} tone={campaign.status === "paid" ? "highlight" : "accent"} />
         </div>
       </div>
 
@@ -135,7 +135,7 @@ export default async function CampaignDetailPage({
             <ul className="mt-2 space-y-2">
               {campaign.requirements.map((req) => (
                 <li key={req} className="flex items-start gap-2 text-[12.5px]">
-                  <span className="mt-0.5 grid size-4 shrink-0 place-items-center rounded-full bg-studio-violet-soft text-studio-violet">
+                  <span className="mt-0.5 grid size-4 shrink-0 place-items-center rounded-full bg-studio-accent-soft text-studio-accent">
                     <Check className="size-2.5" strokeWidth={3.5} />
                   </span>
                   {req}
@@ -210,11 +210,11 @@ export default async function CampaignDetailPage({
             <div className="mt-4 flex items-center gap-2">
               <input
                 placeholder="Écrire un commentaire…"
-                className="h-10 flex-1 rounded-xl border border-studio-border bg-studio-bg px-3 text-[12px] outline-none transition-colors placeholder:text-studio-muted/70 focus:border-studio-violet/50 focus:bg-studio-surface"
+                className="h-10 flex-1 rounded-xl border border-studio-border bg-studio-bg px-3 text-[12px] outline-none transition-colors placeholder:text-studio-muted/70 focus:border-studio-accent/50 focus:bg-studio-surface"
               />
               <button
                 aria-label="Envoyer le commentaire"
-                className="grid size-10 shrink-0 place-items-center rounded-xl bg-studio-violet text-white transition-colors hover:bg-studio-violet-dark"
+                className="grid size-10 shrink-0 place-items-center rounded-xl bg-studio-accent text-white transition-colors hover:bg-studio-accent-dark"
               >
                 <Send className="size-4" />
               </button>
@@ -236,16 +236,16 @@ export default async function CampaignDetailPage({
                       <span
                         className={cn(
                           "absolute left-[11px] top-6 h-full w-px",
-                          done ? "bg-studio-violet/40" : "bg-studio-border",
+                          done ? "bg-studio-accent/40" : "bg-studio-border",
                         )}
                       />
                     )}
                     <span
                       className={cn(
                         "relative z-10 grid size-6 shrink-0 place-items-center rounded-full border text-[10px] font-semibold",
-                        done && "border-studio-violet bg-studio-violet text-white",
+                        done && "border-studio-accent bg-studio-accent text-white",
                         current &&
-                          "border-studio-violet bg-studio-violet-soft text-studio-violet ring-4 ring-studio-violet/10",
+                          "border-studio-accent bg-studio-accent-soft text-studio-accent ring-4 ring-studio-accent/10",
                         !done && !current && "border-studio-border bg-studio-surface text-studio-muted",
                       )}
                     >
@@ -261,7 +261,7 @@ export default async function CampaignDetailPage({
                         {statusMeta[status].label}
                       </p>
                       {current && (
-                        <p className="mt-0.5 text-[10.5px] text-studio-violet">
+                        <p className="mt-0.5 text-[10.5px] text-studio-accent">
                           Étape actuelle
                         </p>
                       )}
@@ -288,7 +288,7 @@ export default async function CampaignDetailPage({
                 >
                   <span className="flex items-center gap-1.5">
                     {payment.status === "paid" ? (
-                      <ShieldCheck className="size-3.5 text-[#2f6b1f]" />
+                      <ShieldCheck className="size-3.5 text-studio-success" />
                     ) : (
                       <CircleDollarSign className="size-3.5 text-studio-muted" />
                     )}

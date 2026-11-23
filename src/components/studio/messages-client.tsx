@@ -69,7 +69,7 @@ export function MessagesClient() {
   return (
     <div className="space-y-5">
       <div>
-        <p className="text-[10.5px] font-semibold uppercase tracking-[0.16em] text-studio-violet">
+        <p className="text-[10.5px] font-semibold uppercase tracking-[0.16em] text-studio-accent">
           Messages
         </p>
         <h1 className="mt-1.5 text-[26px] font-semibold tracking-[-0.03em] sm:text-[30px]">
@@ -92,7 +92,7 @@ export function MessagesClient() {
           <div className="border-b border-studio-border px-4 py-3">
             <p className="text-[12px] font-semibold">
               Boîte de réception
-              <span className="ml-1.5 rounded-full bg-studio-violet-soft px-1.5 py-0.5 text-[10px] text-studio-violet">
+              <span className="ml-1.5 rounded-full bg-studio-accent-soft px-1.5 py-0.5 text-[10px] text-studio-accent">
                 {conversations.reduce((total, c) => total + c.unread, 0)} non lus
               </span>
             </p>
@@ -107,7 +107,7 @@ export function MessagesClient() {
                     onClick={() => openConversation(conversation)}
                     className={cn(
                       "flex w-full items-start gap-3 px-4 py-3 text-left transition-colors",
-                      active ? "bg-studio-violet-soft/60" : "hover:bg-studio-soft/70",
+                      active ? "bg-studio-accent-soft/60" : "hover:bg-studio-soft/70",
                     )}
                   >
                     <span className="relative shrink-0">
@@ -116,7 +116,7 @@ export function MessagesClient() {
                         tone={conversation.tone}
                       />
                       {conversation.online && (
-                        <span className="absolute -bottom-0.5 -right-0.5 size-2.5 rounded-full bg-[#22c55e] ring-2 ring-studio-surface" />
+                        <span className="absolute -bottom-0.5 -right-0.5 size-2.5 rounded-full bg-studio-online ring-2 ring-studio-surface" />
                       )}
                     </span>
                     <span className="min-w-0 flex-1">
@@ -138,7 +138,7 @@ export function MessagesClient() {
                           {conversation.lastMessage}
                         </span>
                         {unread > 0 && (
-                          <span className="grid size-4 shrink-0 place-items-center rounded-full bg-studio-violet text-[9px] font-semibold text-white">
+                          <span className="grid size-4 shrink-0 place-items-center rounded-full bg-studio-accent text-[9px] font-semibold text-white">
                             {unread}
                           </span>
                         )}
@@ -176,7 +176,7 @@ export function MessagesClient() {
             {campaign && (
               <Link
                 href={`/studio/campaigns/${campaign.id}`}
-                className="hidden items-center gap-1 rounded-lg bg-studio-soft px-2.5 py-1.5 text-[10.5px] font-medium text-studio-ink/70 transition-colors hover:text-studio-violet sm:inline-flex"
+                className="hidden items-center gap-1 rounded-lg bg-studio-soft px-2.5 py-1.5 text-[10.5px] font-medium text-studio-ink/70 transition-colors hover:text-studio-accent sm:inline-flex"
               >
                 {campaign.title}
               </Link>
@@ -190,7 +190,7 @@ export function MessagesClient() {
               </p>
               <Link
                 href={`/studio/campaigns/${campaign.id}`}
-                className="shrink-0 text-[10.5px] font-medium text-studio-violet hover:underline"
+                className="shrink-0 text-[10.5px] font-medium text-studio-accent hover:underline"
               >
                 Voir la campagne
               </Link>
@@ -210,7 +210,7 @@ export function MessagesClient() {
                   className={cn(
                     "max-w-[78%] rounded-2xl px-3 py-2 text-[12px] leading-relaxed",
                     message.from === "me"
-                      ? "rounded-br-md bg-studio-violet text-white"
+                      ? "rounded-br-md bg-studio-accent text-white"
                       : "rounded-bl-md border border-studio-border bg-studio-surface text-studio-ink/80",
                   )}
                 >
@@ -248,7 +248,7 @@ export function MessagesClient() {
                     }
                   }}
                   placeholder={`Écrire à ${selected.brand}…`}
-                  className="h-10 w-full rounded-xl border border-studio-border bg-studio-bg pl-3 pr-9 text-[12px] outline-none transition-colors placeholder:text-studio-muted/70 focus:border-studio-violet/50 focus:bg-studio-surface"
+                  className="h-10 w-full rounded-xl border border-studio-border bg-studio-bg pl-3 pr-9 text-[12px] outline-none transition-colors placeholder:text-studio-muted/70 focus:border-studio-accent/50 focus:bg-studio-surface"
                 />
                 <button
                   aria-label="Emoji"
@@ -260,7 +260,7 @@ export function MessagesClient() {
               <button
                 onClick={send}
                 aria-label="Envoyer"
-                className="grid size-10 shrink-0 place-items-center rounded-xl bg-studio-violet text-white transition-colors hover:bg-studio-violet-dark"
+                className="grid size-10 shrink-0 place-items-center rounded-xl bg-studio-accent text-white transition-colors hover:bg-studio-accent-dark"
               >
                 <Send className="size-4" />
               </button>

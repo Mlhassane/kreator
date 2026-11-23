@@ -27,7 +27,7 @@ export function SharePortfolioButton({ slug }: { slug: string }) {
     <StudioButton onClick={share} variant="outline">
       {copied ? (
         <>
-          <Check className="size-4 text-[#2f6b1f]" />
+          <Check className="size-4 text-studio-success" />
           Lien copié
         </>
       ) : (
@@ -57,7 +57,7 @@ export function CopyLink({ slug }: { slug: string }) {
         className={cn(
           "inline-flex h-9 shrink-0 items-center gap-1.5 rounded-lg px-2.5 text-[11.5px] font-medium transition-colors",
           copied
-            ? "bg-[#e9f8e1] text-[#2f6b1f]"
+            ? "bg-studio-success-soft text-studio-success"
             : "bg-studio-soft text-studio-ink/70 hover:text-studio-ink",
         )}
       >
@@ -92,7 +92,7 @@ export function VisibilityToggle({
         onClick={() => setOn((v) => !v)}
         className={cn(
           "relative mt-0.5 h-5 w-9 shrink-0 rounded-full transition-colors",
-          on ? "bg-studio-violet" : "bg-studio-soft",
+          on ? "bg-studio-accent" : "bg-studio-soft",
         )}
       >
         <span

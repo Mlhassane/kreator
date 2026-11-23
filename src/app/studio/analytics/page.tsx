@@ -50,8 +50,8 @@ function FollowersChart() {
       >
         <defs>
           <linearGradient id="followersFill" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#7357ff" stopOpacity="0.28" />
-            <stop offset="100%" stopColor="#7357ff" stopOpacity="0" />
+            <stop offset="0%" stopColor="#d9502b" stopOpacity="0.28" />
+            <stop offset="100%" stopColor="#d9502b" stopOpacity="0" />
           </linearGradient>
         </defs>
 
@@ -62,7 +62,7 @@ function FollowersChart() {
             x2={W - pad}
             y1={pad + ratio * (H - pad * 2)}
             y2={pad + ratio * (H - pad * 2)}
-            stroke="#eeeeee"
+            stroke="#e3d7c6"
             strokeWidth="1"
             strokeDasharray="4 5"
           />
@@ -72,7 +72,7 @@ function FollowersChart() {
         <path
           d={line}
           fill="none"
-          stroke="#7357ff"
+          stroke="#d9502b"
           strokeWidth="2.5"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -84,13 +84,13 @@ function FollowersChart() {
             cx={x}
             cy={y}
             r={index === points.length - 1 ? 4.5 : 3}
-            fill="#ffffff"
-            stroke="#7357ff"
+            fill="#fffdf9"
+            stroke="#d9502b"
             strokeWidth="2"
           />
         ))}
 
-        <circle cx={last[0]} cy={last[1]} r="9" fill="#7357ff" opacity="0.12" />
+        <circle cx={last[0]} cy={last[1]} r="9" fill="#d9502b" opacity="0.12" />
       </svg>
 
       <div className="mt-1 flex justify-between px-1">
@@ -109,7 +109,7 @@ export default function StudioAnalyticsPage() {
     <div className="space-y-5">
       <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
         <div>
-          <p className="text-[10.5px] font-semibold uppercase tracking-[0.16em] text-studio-violet">
+          <p className="text-[10.5px] font-semibold uppercase tracking-[0.16em] text-studio-accent">
             Analytics
           </p>
           <h1 className="mt-1.5 text-[26px] font-semibold tracking-[-0.03em] sm:text-[30px]">
@@ -120,7 +120,7 @@ export default function StudioAnalyticsPage() {
           </p>
         </div>
         <span className="inline-flex items-center gap-1.5 self-start rounded-xl border border-studio-border bg-studio-surface px-3 py-2 text-[11.5px] text-studio-muted">
-          <ShieldCheck className="size-4 text-[#2f6b1f]" />
+          <ShieldCheck className="size-4 text-studio-success" />
           Données mises à jour il y a 2 h
         </span>
       </div>
@@ -137,7 +137,7 @@ export default function StudioAnalyticsPage() {
           value="6,8 %"
           delta="+0,4 pt"
           icon={<TrendingUp className="size-4" />}
-          accent="lime"
+          accent="highlight"
         />
         <StatCard
           label="Vues moyennes"
@@ -145,7 +145,7 @@ export default function StudioAnalyticsPage() {
           unit="par contenu"
           delta="+12 % vs octobre"
           icon={<Eye className="size-4" />}
-          accent="amber"
+          accent="warning"
         />
         <StatCard
           label="Collaborations"
@@ -162,7 +162,7 @@ export default function StudioAnalyticsPage() {
           title="Évolution des abonnés"
           subtitle="6 derniers mois · toutes plateformes"
           action={
-            <span className="inline-flex items-center gap-1 rounded-full bg-[#e9f8e1] px-2.5 py-1 text-[10.5px] font-semibold text-[#2f6b1f]">
+            <span className="inline-flex items-center gap-1 rounded-full bg-studio-success-soft px-2.5 py-1 text-[10.5px] font-semibold text-studio-success">
               <BadgeCheck className="size-3.5" />
               Vérifié
             </span>
@@ -171,7 +171,7 @@ export default function StudioAnalyticsPage() {
           <FollowersChart />
           <div className="mt-3 flex items-center gap-4 border-t border-studio-border pt-3 text-[11px] text-studio-muted">
             <span className="inline-flex items-center gap-1.5">
-              <span className="size-2 rounded-full bg-studio-violet" />
+              <span className="size-2 rounded-full bg-studio-accent" />
               120K abonnés cumulés
             </span>
             <span>+24K sur 6 mois</span>
@@ -276,7 +276,7 @@ export default function StudioAnalyticsPage() {
 
       <div className="grid gap-3 sm:grid-cols-2">
         <div className="studio-card flex items-start gap-3 p-4">
-          <span className="grid size-9 shrink-0 place-items-center rounded-xl bg-[#e9f8e1] text-[#2f6b1f]">
+          <span className="grid size-9 shrink-0 place-items-center rounded-xl bg-studio-success-soft text-studio-success">
             <BadgeCheck className="size-4" />
           </span>
           <div>

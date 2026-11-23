@@ -84,11 +84,11 @@ export function StudioShell({ children }: { children: ReactNode }) {
         </div>
 
         <div className="px-4">
-          <button className="flex w-full items-center gap-3 rounded-xl border border-studio-border bg-studio-bg px-3 py-2.5 text-left transition-colors hover:border-studio-violet/30">
+          <button className="flex w-full items-center gap-3 rounded-xl border border-studio-border bg-studio-bg px-3 py-2.5 text-left transition-colors hover:border-studio-accent/30">
             <Avatar
               name={studioProfile.name}
               photo={studioProfile.avatar}
-              gradient="from-[#7357ff] to-[#a78bfa]"
+              gradient="from-[#d9502b] to-[#efa92f]"
               className="size-9 text-[11px]"
             />
             <span className="min-w-0 flex-1">
@@ -96,7 +96,7 @@ export function StudioShell({ children }: { children: ReactNode }) {
                 {studioProfile.name}
               </span>
               <span className="flex items-center gap-1 text-[11px] text-studio-muted">
-                <ShieldCheck className="size-3 text-studio-violet" />
+                <ShieldCheck className="size-3 text-studio-accent" />
                 Créatrice vérifiée
               </span>
             </span>
@@ -118,14 +118,14 @@ export function StudioShell({ children }: { children: ReactNode }) {
                     className={cn(
                       "group flex items-center gap-3 rounded-xl px-3 py-2.5 text-[13.5px] font-medium transition-colors",
                       active
-                        ? "bg-studio-violet-soft text-studio-violet"
+                        ? "bg-studio-accent-soft text-studio-accent"
                         : "text-studio-ink/70 hover:bg-studio-soft hover:text-studio-ink",
                     )}
                   >
                     <item.icon
                       className={cn(
                         "size-[18px] shrink-0",
-                        active ? "text-studio-violet" : "text-studio-muted group-hover:text-studio-ink/70",
+                        active ? "text-studio-accent" : "text-studio-muted group-hover:text-studio-ink/70",
                       )}
                       strokeWidth={active ? 2.2 : 1.9}
                     />
@@ -135,7 +135,7 @@ export function StudioShell({ children }: { children: ReactNode }) {
                         className={cn(
                           "grid h-5 min-w-5 place-items-center rounded-full px-1.5 text-[10px] font-semibold",
                           active
-                            ? "bg-studio-violet text-white"
+                            ? "bg-studio-accent text-white"
                             : "bg-studio-soft text-studio-muted",
                         )}
                       >
@@ -150,12 +150,12 @@ export function StudioShell({ children }: { children: ReactNode }) {
         </nav>
 
         <div className="p-3">
-          <div className="rounded-2xl bg-gradient-to-br from-studio-violet to-[#9d86ff] p-4 text-white">
+          <div className="rounded-2xl bg-gradient-to-br from-studio-accent to-[#e07a4f] p-4 text-white">
             <div className="flex items-center justify-between">
               <span className="text-[11px] font-medium text-white/80">
                 Reputation Score
               </span>
-              <Sparkles className="size-4 text-studio-lime" />
+              <Sparkles className="size-4 text-studio-highlight" />
             </div>
             <p className="mt-2 flex items-baseline gap-1">
               <span className="text-[26px] font-semibold leading-none">
@@ -165,7 +165,7 @@ export function StudioShell({ children }: { children: ReactNode }) {
             </p>
             <div className="mt-3 h-1.5 overflow-hidden rounded-full bg-white/25">
               <div
-                className="h-full rounded-full bg-studio-lime"
+                className="h-full rounded-full bg-studio-highlight"
                 style={{ width: `${studioProfile.reputation}%` }}
               />
             </div>
@@ -206,7 +206,7 @@ export function StudioShell({ children }: { children: ReactNode }) {
           <div className="ml-auto flex items-center gap-2.5">
             <Link
               href="/studio/discover"
-              className="flex h-10 w-[280px] items-center gap-2.5 rounded-xl border border-studio-border bg-studio-surface px-3.5 text-[13px] text-studio-muted transition-colors hover:border-studio-violet/30"
+              className="flex h-10 w-[280px] items-center gap-2.5 rounded-xl border border-studio-border bg-studio-surface px-3.5 text-[13px] text-studio-muted transition-colors hover:border-studio-accent/30"
             >
               <Search className="size-4" />
               Rechercher une campagne…
@@ -220,20 +220,20 @@ export function StudioShell({ children }: { children: ReactNode }) {
               className="relative grid size-10 place-items-center rounded-xl border border-studio-border bg-studio-surface text-studio-ink/70 transition-colors hover:text-studio-ink"
             >
               <Bell className="size-[18px]" />
-              <span className="absolute right-2.5 top-2.5 size-1.5 rounded-full bg-studio-violet ring-2 ring-studio-surface" />
+              <span className="absolute right-2.5 top-2.5 size-1.5 rounded-full bg-studio-accent ring-2 ring-studio-surface" />
             </button>
 
             <div className="relative">
               <button
                 onClick={() => setMenuOpen((v) => !v)}
-                className="flex items-center gap-2 rounded-xl border border-studio-border bg-studio-surface p-1 pr-2 transition-colors hover:border-studio-violet/30"
+                className="flex items-center gap-2 rounded-xl border border-studio-border bg-studio-surface p-1 pr-2 transition-colors hover:border-studio-accent/30"
                 aria-expanded={menuOpen}
                 aria-label="Menu du compte"
               >
                 <Avatar
                   name={studioProfile.name}
                   photo={studioProfile.avatar}
-                  gradient="from-[#7357ff] to-[#a78bfa]"
+                  gradient="from-[#d9502b] to-[#efa92f]"
                   className="size-8 text-[10px]"
                 />
                 <ChevronDown className="size-3.5 text-studio-muted" />
@@ -291,13 +291,13 @@ export function StudioShell({ children }: { children: ReactNode }) {
               className="relative grid size-9 place-items-center rounded-lg border border-studio-border bg-studio-surface text-studio-ink/70"
             >
               <Bell className="size-4" />
-              <span className="absolute right-2 top-2 size-1.5 rounded-full bg-studio-violet" />
+              <span className="absolute right-2 top-2 size-1.5 rounded-full bg-studio-accent" />
             </button>
             <Link href="/studio/profile" aria-label="Profil">
               <Avatar
                 name={studioProfile.name}
                 photo={studioProfile.avatar}
-                gradient="from-[#7357ff] to-[#a78bfa]"
+                gradient="from-[#d9502b] to-[#efa92f]"
                 className="size-9 text-[10px]"
               />
             </Link>
@@ -320,13 +320,13 @@ export function StudioShell({ children }: { children: ReactNode }) {
                   href={item.href}
                   className={cn(
                     "flex flex-col items-center gap-1 py-2.5 text-[10px] font-medium transition-colors",
-                    active ? "text-studio-violet" : "text-studio-muted",
+                    active ? "text-studio-accent" : "text-studio-muted",
                   )}
                 >
                   <span
                     className={cn(
                       "grid size-8 place-items-center rounded-lg transition-colors",
-                      active && "bg-studio-violet-soft",
+                      active && "bg-studio-accent-soft",
                     )}
                   >
                     <item.icon className="size-[18px]" strokeWidth={active ? 2.2 : 1.9} />
@@ -357,7 +357,7 @@ export function StudioPageHeader({
     <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
       <div>
         {eyebrow && (
-          <p className="mb-1.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-studio-violet">
+          <p className="mb-1.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-studio-accent">
             {eyebrow}
           </p>
         )}
@@ -394,10 +394,10 @@ export function StudioButton({
 }) {
   const variants = {
     primary:
-      "bg-studio-violet text-white hover:bg-studio-violet-dark shadow-[0_10px_24px_-12px_rgba(115,87,255,0.9)]",
-    secondary: "bg-studio-lime text-[#1d2b06] hover:bg-[#b8ea55]",
+      "bg-studio-accent text-white hover:bg-studio-accent-dark shadow-[0_10px_24px_-12px_rgba(217,80,43,0.9)]",
+    secondary: "bg-studio-highlight text-studio-ink hover:bg-[#f0b84a]",
     outline:
-      "border border-studio-border bg-studio-surface text-studio-ink hover:border-studio-violet/40 hover:text-studio-violet",
+      "border border-studio-border bg-studio-surface text-studio-ink hover:border-studio-accent/40 hover:text-studio-accent",
     ghost: "text-studio-ink/70 hover:bg-studio-soft hover:text-studio-ink",
     dark: "bg-studio-ink text-white hover:bg-[#2a2a2a]",
   } as const;
